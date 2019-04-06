@@ -54,7 +54,7 @@ app.factory('$peer', ($http, $log, $q, $timeout) => {
           return res
         })
         .then(res => {
-          if (!res.data.success) {
+          if (res.status !== 200) {
             return $q.reject({
               error: res.data.error || null,
               message: res.data.message ||  null,

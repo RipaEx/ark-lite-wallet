@@ -11,7 +11,7 @@ app.factory('$peers', ($peer, $timeout) => {
       this.stack = {
         official: [
           new $peer({ host: 'api.ripaex.io', port: null, ssl: true }),
-          new $peer({ host: 'api2.ripaex.io', port: null, ssl: true }),
+//          new $peer({ host: 'api2.ripaex.io', port: null, ssl: true }),
         ],
         public: [],
         testnet: [
