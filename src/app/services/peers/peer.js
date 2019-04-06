@@ -5,19 +5,19 @@ const API_PEERS = '/api/peers'
 const API_ACCOUNT = '/api/accounts'
 const API_BALANCE = '/api/accounts/getBalance'
 const API_TRANSACTIONS = '/api/transactions'
-const API_NETHASH = '/api/blocks/getNetHash'
-const API_SEND_TRANSACTION = '/peer/transactions'
+const API_NETHASH = '/api/blocks/getNethash'
+const API_SEND_TRANSACTION = '/api/v2/transactions'
 const API_STATUS = '/api/loader/status'
 
 const REQUEST_TIMEOUT = 12000
 
 const TRANSACTION_HEADER_OS = 'ripa-lite-wallet'
-const TRANSACTION_HEADER_PORT = '1'
+const TRANSACTION_HEADER_PORT = '5502'
 const TRANSACTION_HEADER_VERSION = require('../../../../package.json').version
 
 app.factory('$peer', ($http, $log, $q, $timeout) => {
   return class $peer {
-    constructor ({ host, port = 4001, ssl = false }) {
+    constructor ({ host, port = 5502, ssl = false }) {
       this.host = host
       this.port = port
       this.ssl = !!ssl
